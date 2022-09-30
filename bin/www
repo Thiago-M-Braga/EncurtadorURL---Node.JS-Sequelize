@@ -4,6 +4,12 @@
  * Module dependencies.
  */
 
+(async () => {
+  const database = require('../db');
+const link = require('../models/link');
+
+await database.sync();
+
 var app = require('../app');
 var debug = require('debug')('encurtadorurl:server');
 var http = require('http');
@@ -88,3 +94,6 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+})();
+
