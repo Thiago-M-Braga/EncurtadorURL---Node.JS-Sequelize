@@ -4,6 +4,7 @@ var router = express.Router();
 
 const link = require('../models/link');
 
+//Status
 router.get('/:code/stats',async (req, res, next) => {
   const code = req.params.code;
   const resultado = await Link.findOne({code});
